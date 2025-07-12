@@ -1,25 +1,19 @@
 // Ficheiro: middleware.js (na raiz do projeto)
 
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
-// Define quais as rotas que são públicas (acessíveis sem login)
-const isPublicRoute = createRouteMatcher([
+// A abordagem recomendada é passar as rotas públicas e ignoradas
+// diretamente como opções para o clerkMiddleware.
+export default clerkMiddleware({
+  publicRoutes: [
     '/', // A sua página inicial, se for pública
     '/sign-in(.*)', 
     '/sign-up(.*)'
-]);
-
-// Define quais as rotas que devem ser ignoradas pelo middleware (ex: webhooks)
-const isIgnoredRoute = createRouteMatcher([
+  ],
+  ignoredRoutes: [
     '/api/pagseguro-webhook',
     '/api/stripe-webhook' // Adicione outros webhooks aqui se os tiver
-]);
-
-export default clerkMiddleware((auth, req) => {
-  // Se a rota não for pública e não for ignorada, protege-a.
-  if (!isPublicRoute(req) && !isIgnoredRoute(req)) {
-    auth().protect();
-  }
+  ],
 });
 
 export const config = {
