@@ -1,14 +1,25 @@
+/*
+-----------------------------------------------------------------------------
+ARQUIVO 1: package.json
+-----------------------------------------------------------------------------
+Este arquivo define as dependências do projeto.
+Para instalar tudo, execute `npm install` no seu terminal, na pasta do projeto.
+*/
+
 {
-  "name": "video-generator-project",
+  "name": "videobook-backend",
   "version": "1.0.0",
-  "description": "Um projeto que usa OCR para gerar vídeos.",
-  "main": "index.html",
+  "description": "Backend para o app VIDEOBOOK que envia notificações por e-mail.",
+  "main": "server.js",
   "scripts": {
-    "start": "echo \"Sem script de início\""
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-textract": "^3.58.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7"
   }
 }
