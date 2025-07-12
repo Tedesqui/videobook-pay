@@ -22,12 +22,12 @@ export default async function handler(req, res) {
       line_items: [
         {
           price_data: {
-            currency: 'brl', // ou 'usd'
+            currency: 'usd', // ou 'usd'
             product_data: {
               name: '1 Crédito de Geração de Vídeo',
               description: 'Um crédito para gerar um vídeo com a nossa IA.',
             },
-            unit_amount: 500, // Valor em cêntimos (ex: 500 = R$ 5,00)
+            unit_amount: 200, // Valor em cêntimos (ex: 500 = R$ 5,00)
           },
           quantity: 1,
         },
