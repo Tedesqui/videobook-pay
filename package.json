@@ -1,5 +1,5 @@
 {
-  "name": "video-app-pagseguro",
+  "name": "video-app-pagseguro-final",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^5.1.6",
     "@vercel/postgres": "^0.9.0",
+    "micro": "^10.0.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
